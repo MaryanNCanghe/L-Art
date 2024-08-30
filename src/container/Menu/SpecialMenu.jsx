@@ -16,7 +16,12 @@ const SpecialMenu = () => (
         <p className="app__specialMenu-menu_heading">Wine & Beer</p>
         <div className="app__specialMenu_menu_items">
           {data.wines.map((wine, index) => (
-            <MenuItem key={wine.title + index} title={wine.title} price={wine.price} tags={wine.tags} />
+            <MenuItem
+              key={wine.title + index}
+              title={wine.title}
+              price={wine.price}
+              tags={wine.tags}
+            />
           ))}
         </div>
       </div>
@@ -29,14 +34,20 @@ const SpecialMenu = () => (
         <p className="app__specialMenu-menu_heading">Cocktails</p>
         <div className="app__specialMenu_menu_items">
           {data.cocktails.map((cocktail, index) => (
-            <MenuItem key={cocktail.title + index} title={cocktail.title} price={cocktail.price} tags={cocktail.tags} />
+            <MenuItem
+              key={cocktail.title + index}
+              title={cocktail.title}
+              price={cocktail.price}
+              tags={cocktail.tags}
+            />
           ))}
         </div>
       </div>
     </div>
-
     <div style={{ marginTop: 15 }}>
-      <button type="button" download="Menu" href="Menuf" className="custom__button">Download</button>
+      <a href="path/to/your/Menu" download="Menu">
+        <button type="button" className="custom__button">Download</button>
+      </a>
     </div>
   </div>
 );

@@ -1,0 +1,45 @@
+.booking-container {
+  max-width: 10px 2000px;
+  margin: 0 auto;
+  background-color: var(--color-black);
+  padding: 100px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px  var(--color-golden);
+}
+
+h1 {
+  color: var(--color-golden);
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin: 10px 0 5px;
+  font-weight: bold;
+}
+
+input,
+textarea
+ {
+  padding: 10px 100px;
+  margin-bottom: 10px;
+  border: 1px solid var(--color-golden);
+  border-radius: 4px;
+}
+
+input:focus,
+textarea:focus {
+  border-color: var(--color-golden);
+  outline: none;
+}
+
+
+
+button:hover {
+  background-color: var(--color-white);
+}
