@@ -1,7 +1,3 @@
-/* eslint-disable jsx-a11y/label-has-associated-control */
-/* eslint-disable react/self-closing-comp */
-/* eslint-disable react/jsx-closing-tag-location */
-
 import React, { useState } from 'react';
 import './Booking.css';
 
@@ -24,16 +20,18 @@ const Booking = () => {
     });
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Aqui você pode adicionar o código para enviar os dados para o servidor ou email
-    alert('Reserva enviada com sucesso!');
-  };
 
   return (
     <div className="booking-container" id="Booking">
       <h1 className="headtext__cormorant" style={{ marginBottom: '3rem' }}>Book a Table</h1>
-      <form id="booking-form" onSubmit={handleSubmit}>
+      <form
+        id="booking-form"
+        action="https://formsubmit.co/mariadufna@email.com"
+        method="POST"
+      >
+        <input type="hidden" name="_subject" value="New Booking Request" />
+        <input type="hidden" name="_next" value="/thank-you" /> 
+        
         <label className="p__opensans" htmlFor="name">Name:</label>
         <input
           type="text"
@@ -43,6 +41,7 @@ const Booking = () => {
           onChange={handleChange}
           required
         />
+        
         <label className="p__opensans" htmlFor="email">E-mail:</label>
         <input
           type="email"
@@ -52,6 +51,7 @@ const Booking = () => {
           onChange={handleChange}
           required
         />
+        
         <label className="p__opensans" htmlFor="phone">Phone:</label>
         <input
           type="tel"
@@ -61,6 +61,7 @@ const Booking = () => {
           onChange={handleChange}
           required
         />
+        
         <label className="p__opensans" htmlFor="date">Day:</label>
         <input
           type="date"
@@ -70,6 +71,7 @@ const Booking = () => {
           onChange={handleChange}
           required
         />
+        
         <label className="p__opensans" htmlFor="time">Time:</label>
         <input
           type="time"
@@ -79,7 +81,8 @@ const Booking = () => {
           onChange={handleChange}
           required
         />
-        <label className="p__opensans" htmlFor="guests">Number Of Guest:</label>
+        
+        <label className="p__opensans" htmlFor="guests">Number Of Guests:</label>
         <input
           type="number"
           id="guests"
@@ -89,7 +92,8 @@ const Booking = () => {
           required
           min="1"
         />
-        <label className="p__opensans" htmlFor="special-requests">Coment:</label>
+        
+        <label className="p__opensans" htmlFor="special-requests">Comment:</label>
         <textarea
           id="special-requests"
           name="specialRequests"
@@ -97,7 +101,8 @@ const Booking = () => {
           value={formData.specialRequests}
           onChange={handleChange}
         ></textarea>
-        <button type="submit" className="custom__button">Reservar Mesa</button>
+        
+        <button type="submit" className="custom__button">Reserve Table</button>
       </form>
     </div>
   );
